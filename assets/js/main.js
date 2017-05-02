@@ -9,3 +9,12 @@ tareas.forEach(function(element){
 	liAux.appendChild(textAux); //deja el texto dentro del li, pero no del ul
 	miUl.appendChild(liAux); //deja el li dentro del ul
 });
+
+function addTask(){
+	var miInput = document.getElementById("task").value;
+	liAux = document.createElement("li");
+	textAux = document.createTextNode(miInput);
+	liAux.appendChild(textAux);
+	miUl.appendChild(liAux);
+	document.getElementById("task").value = "";
+}
