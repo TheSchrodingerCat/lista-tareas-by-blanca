@@ -7,10 +7,10 @@ tareas.forEach(renderTask);
 
 function renderTask(task){
 	liAux = document.createElement("li");
-	textAux = document.createTextNode(task.title);
+	textAux = document.createTextNode(task.title + "    ");
 
 	var enlace = document.createElement("a");
-	var textEdit = document.createTextNode(" Editar");
+	var textEdit = document.createTextNode("Editar");
 
 	liAux.appendChild(textAux);
 	miUl.appendChild(liAux);
@@ -24,11 +24,13 @@ function editTask(enlace,idTask){
 	console.log(idTask);
 	var nuevoTexto = prompt("Ingrese el nuevo texto: ");
 	var tarea = tareas.filter(function(element){
-		return element.id == idtask;
+		return element.id == idTask;
 	});
 	tarea[0].title = nuevoTexto;
+
 	var miLi = enlace.parentNode;
-	miLi.innerHTML = nuevoTexto + enlace;
+	miLi.innerHTML = nuevoTexto;
+	miLi.appendChild(enlace);
 }
 
 function Task(title){
